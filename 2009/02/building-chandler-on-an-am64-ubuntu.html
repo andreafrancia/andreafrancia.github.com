@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title></title>
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <link rel="openid.server" href="http://www.blogger.com/openid-server.g" />
+        <link rel="openid.delegate" href="http://andreafrancia.blogspot.com/" />
+
+        <link href="/css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="/css/code-highlight.css" rel="stylesheet" type="text/css" />
+
+        <link rel="alternate" type="application/rss+xml" title="Feed" href="/atom.xml" />
+
+        <!-- Histats.com  START  --> 
+<script async type="text/javascript" language="javascript"> 
+var s_sid = 321314;var st_dominio = 4; 
+var cimg = 0;var cwi =150;var che =30; 
+</script> 
+<script  async type="text/javascript" language="javascript" src="http://s11.histats.com/js9.js"/></script> 
+<noscript><img src="http://s103.histats.com/stats/0.gif?321314&1" alt="contatore free" border="0"/> 
+</noscript> 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4316218-1']);
+  _gaq.push(['_setDomainName', 'andreafrancia.it']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    </head>
+    <body>
+        <div id='mainnav' class='nav'>
+    <ul>
+        <li><a href="/">andreafrancia.it</a>
+        <li><a href="/log.html">blog</a>
+        <li class="last"><a href="/tdd-ios.html">TDD su iOS</a>
+    </ul>
+</div>
+
+        <div id="contents">
+            <h1>Building Chandler on an am64 Ubuntu</h1>
+<div class='post'>
+After many days of tries finally I managed to run <a href="http://chandlerproject.org/">Chandler Desktop</a> on my Ubuntu.
+I had tried the binary installation but it didn't work, running chandler the following problem is reported:
+
+<pre name="code" class="shell:nogutter:nocontrol">
+$ chandler
+...
+ImportError: /home/andrea/.python-eggs/PyICU-0.8-py2.5-linux-i686.egg-tmp/_PyICU.so: wrong ELF class: ELFCLASS32
+</pre>
+Fortunately you can always build it from sources. Unfortunately downloading the sources and compiling take much time and is not so easy know which packages you need to build it.
+
+To install all(? surely I missed someone) the needed packages do:
+<pre name="code" class="shell:nogutter:nocontrol">
+sudo apt-get install libicu-dev
+sudo apt-get install libssl-dev
+sudo apt-get install python-gdata
+sudo apt-get install ant
+sudo apt-get install default-jdk
+sudo apt-get install lib32icu38
+sudo apt-get install curl
+</pre>
+To get the sources and build them:
+<pre name="code" class="shell:nogutter:nocontrol">
+svn checkout http://svn.osafoundation.org/chandler/trunk chandler
+cd chandler
+cd external
+export BUILD_ROOT=$(pwd)
+make world # wait ... wait ... wait
+</pre>
+Now, if the build succeed you can run chandler with:
+<pre name="code" class="shell:nogutter:nocontrol">
+cd ../chandler
+./chandler
+</pre>
+If the build fails you, probably, need to install some package that I missed. To discover which package you can use google. For example if you got this error:
+<pre name="code" class="shell:nogutter:nocontrol">
+SWIG/_m2crypto.i:23: Error: Unable to find 'openssl/opensslv.h'
+</pre>
+
+You should search on google these words <a href="http://www.google.it/search?q=openssl%2Fopensslv.h+Ubuntu+filelist">"openssl/opensslv.h Ubuntu filelist"</a>, the first results should be the page of missing package, in this case is
+
+<quote>
+<span style="font-style: italic;">  http://packages.ubuntu.com/feisty/amd64/</span><span style="font-weight: bold; font-style: italic;">libssl-dev</span><span style="font-style: italic;">/filelist</span>
+</quote>
+
+So it's simple add the needed package:
+<pre name="code" class="shell:nogutter:nocontrol">
+apt-get install libssl-dev
+</pre></div>
+
+        </div>
+        <!-- Histats.com  START  --> 
+<script async type="text/javascript" language="javascript"> 
+var s_sid = 321314;var st_dominio = 4; 
+var cimg = 0;var cwi =150;var che =30; 
+</script> 
+<script  async type="text/javascript" language="javascript" src="http://s11.histats.com/js9.js"/></script> 
+<noscript><img src="http://s103.histats.com/stats/0.gif?321314&1" alt="contatore free" border="0"/> 
+</noscript> 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4316218-1']);
+  _gaq.push(['_setDomainName', 'andreafrancia.it']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    </body>
+</html>

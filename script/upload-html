@@ -1,0 +1,9 @@
+#!/bin/bash
+set -o xtrace
+
+mkdir -p _site
+cd _site
+git init
+git add --all .
+git commit -m "Generated."
+git push git@github.com:andreafrancia/andreafrancia.github.io.git master -f

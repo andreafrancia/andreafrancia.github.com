@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title></title>
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <link rel="openid.server" href="http://www.blogger.com/openid-server.g" />
+        <link rel="openid.delegate" href="http://andreafrancia.blogspot.com/" />
+
+        <link href="/css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="/css/code-highlight.css" rel="stylesheet" type="text/css" />
+
+        <link rel="alternate" type="application/rss+xml" title="Feed" href="/atom.xml" />
+
+        <!-- Histats.com  START  --> 
+<script async type="text/javascript" language="javascript"> 
+var s_sid = 321314;var st_dominio = 4; 
+var cimg = 0;var cwi =150;var che =30; 
+</script> 
+<script  async type="text/javascript" language="javascript" src="http://s11.histats.com/js9.js"/></script> 
+<noscript><img src="http://s103.histats.com/stats/0.gif?321314&1" alt="contatore free" border="0"/> 
+</noscript> 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4316218-1']);
+  _gaq.push(['_setDomainName', 'andreafrancia.it']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    </head>
+    <body>
+        <div id='mainnav' class='nav'>
+    <ul>
+        <li><a href="/">andreafrancia.it</a>
+        <li><a href="/log.html">blog</a>
+        <li class="last"><a href="/tdd-ios.html">TDD su iOS</a>
+    </ul>
+</div>
+
+        <div id="contents">
+            <h1>trash-cli incluso in Ubuntu e in Debian</h1>
+<div class='post'>
+Cercando su internet ho scoperto con mia grande sorpresa che il mio software è stato aggiunto sia a Ubuntu che a Debian:
+<ul><li><a href="http://packages.ubuntu.com/trash-cli">http://packages.ubuntu.com/trash-cli</a></li><li><a href="http://packages.debian.com/trash-cli">http://packages.debian.com/trash-cli</a></li></ul>Credo che per installarlo basti fare:
+    apt-get install trash-cli
+
+Però dovrebbe funzionare solo sulle versioni intrepid di Ubuntu e unstable di Debian.
+
+Provate e fatemi sapere.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Andrea Francia</div>
+<div class='content'>
+Grazie del tuo interessamento.<br />E' molto bello venirne a conoscenza.<br /><br />Se mi dessi il permesso di aggiungere le tue modifiche con licenza GPL nel source tree principale sarebbe molto bello. Verrai citato nei credits.<br /><br />Se ti va puoi creare un ticket di tipo enanchement con scritto: "Add Solaris support" e allegando per esempio il file .patch.<br /><br />Eventualmente se fossi interessato potresti diventare il mantainer del pacchetto per Solaris.<br /><br />Il mio indirizzo è andrea punto francia chioccio-la gmail dot com.</div>
+</div>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+Ciao, ho scaricato il tuo programmino (0.11.1.2) da Google Code: ho fatto qualche piccola modifica per renderlo funzionante anche su Solaris e nel contempo corretto qualche cosettina.<br />- tutti i files: modificato lo sh-bang usando il comando env<br />- trash.py: su linea 467, aggiunta la condizione "if not self.path.parent.exists() :"<br />- filesystem.py: aggiunto il codice per usare getmntent su sunos<br />- restore.py: modificato su linea 89 path in path.absolute() nel messaggio di errore<br /><br />Se mi dici come contattarti posso mandarti la mia revisione.<br />RoL</div>
+</div>
+</div>
+
+        </div>
+        <!-- Histats.com  START  --> 
+<script async type="text/javascript" language="javascript"> 
+var s_sid = 321314;var st_dominio = 4; 
+var cimg = 0;var cwi =150;var che =30; 
+</script> 
+<script  async type="text/javascript" language="javascript" src="http://s11.histats.com/js9.js"/></script> 
+<noscript><img src="http://s103.histats.com/stats/0.gif?321314&1" alt="contatore free" border="0"/> 
+</noscript> 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4316218-1']);
+  _gaq.push(['_setDomainName', 'andreafrancia.it']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    </body>
+</html>
